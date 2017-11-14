@@ -26,7 +26,7 @@ class Index extends Component {
       <Form inline>
         <FormGroup>
           <ControlLabel>Select chart type:</ControlLabel>
-          <FormControl componentClass="select" placeholder="select">
+          <FormControl componentClass="select" placeholder="select" onChange={(e) => this.setState({ chartType: e.target.value })}>
             {Object.keys(chartDic).map((x, i) => (<option key={i} value={x}>{x}</option>))}
           </FormControl>
         </FormGroup>

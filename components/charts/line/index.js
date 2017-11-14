@@ -5,7 +5,7 @@ import Code from './Code'
 
 const dataJsonDefault = `[{"name":"Page A","uv":4000,"pv":2400,"amt":2400},{"name":"Page B","uv":3000,"pv":1398,"amt":2210},{"name":"Page C","uv":2000,"pv":9800,"amt":2290},{"name":"Page D","uv":2780,"pv":3908,"amt":2000},{"name":"Page E","uv":1890,"pv":4800,"amt":2181},{"name":"Page F","uv":2390,"pv":3800,"amt":2500},{"name":"Page G","uv":3490,"pv":4300,"amt":2100}]`
 
-class BarEditor extends Component {
+class LineEditor extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -56,42 +56,6 @@ class BarEditor extends Component {
                         </FormGroup>
                     </Form>
                     <hr />
-                    <p>bars:</p>
-                    <Form inline>
-                        {bars.map((x, i) => (
-                            <div key={i}>
-                                <FormGroup>
-                                    <ControlLabel>dataKey:</ControlLabel>
-                                    <FormControl value={x.dataKey} placeholder="dataKey" onChange={(e) => {
-                                        bars[i] = {
-                                            ...bars[i],
-                                            dataKey: e.target.value,
-                                        }
-                                        this.setState({ bars: bars.concat() })
-                                    }} />
-                                </FormGroup>
-                                <FormGroup>
-                                    <ControlLabel>color:</ControlLabel>
-                                    <input value={width} type="color" placeholder="color" onChange={(e) => {
-                                        bars[i] = {
-                                            ...bars[i],
-                                            fill: e.target.value,
-                                        }
-                                        this.setState({ bars: bars.concat() })
-                                    }} />
-                                </FormGroup>
-                                {' '}
-                                <a onClick={() => {
-                                    bars.splice(i, 1)
-                                    this.setState({ bars: bars.concat() })
-                                }}>删除</a>
-                                <br />
-                            </div>))}
-                        <a onClick={() => {
-                            this.setState({ bars: [...bars, { dataKey: 'name', fill: '#000' }] })
-                        }}>增加</a>
-                    </Form>
-                    <hr />
                     <Preview {...{ width, height, margin, data, xAxis, bars }} />
                 </Col>
                 <Col sm={4}>
@@ -124,11 +88,11 @@ class BarEditor extends Component {
             </Row>
             <Row>
                 <Col>
-                    <hr />
+                    <hr/>
                     <Code {...{ width, height, margin, data, xAxis, bars }} /></Col>
             </Row>
         </Grid>)
     }
 }
 
-export default BarEditor
+export default LineEditor
