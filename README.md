@@ -9,7 +9,7 @@ yarn
 yarn dev
 # open http://localhost
 ```
-![./static/images/screenshot.png]
+![screenshot](./static/images/screenshot.png)
 
 based on [rechart](http://recharts.org/) [nextjs-boilerplate](https://github.com/nextjs-boilerplate/next.js-boilerplate) 
 
