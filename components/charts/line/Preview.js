@@ -1,13 +1,17 @@
 
 import { LineChart, Bar, XAxis, YAxis, Tooltip, Legend, Line } from 'recharts'
 
-export default ({ width, height, data, margin, xAxis, bars }) => (<LineChart
+export default ({ width, height, data, margin, xAxis, lines }) => (<LineChart
     width={width}
     height={height}
     data={data}
     margin={margin}>
     <XAxis {...xAxis} />
     <YAxis />
-    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-    <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
+    <Tooltip />
+    <Legend />
+    {lines.map((x, i) => {
+        console.log(x)
+        return (<Line key={i} {...x} />)
+    })}
 </LineChart>)

@@ -14,14 +14,15 @@ class LineEditor extends Component {
             margin: { top: 5, right: 30, left: 20, bottom: 5 },
             dataJSON: dataJsonDefault,
             xAxis: { dataKey: "name" },
-            bars: [
+            lines: [
                 {
                     dataKey: "pv",
-                    fill: "#8884d8",
+                    stroke: "#8884d8",
+                    type: 'monotone',
                 },
                 {
                     dataKey: "uv",
-                    fill: "#82ca9d",
+                    stroke: "#82ca9d",
                 }
             ],
             data: JSON.parse(dataJsonDefault),
@@ -29,7 +30,7 @@ class LineEditor extends Component {
         }
     }
     render() {
-        const { width, height, margin, data, xAxis, bars, dataJSON, dataParseError } = this.state
+        const { width, height, margin, data, xAxis, lines, dataJSON, dataParseError } = this.state
         return (<Grid>
             <Row>
                 <Col sm={8}>
@@ -56,7 +57,7 @@ class LineEditor extends Component {
                         </FormGroup>
                     </Form>
                     <hr />
-                    <Preview {...{ width, height, margin, data, xAxis, bars }} />
+                    <Preview {...{ width, height, margin, data, xAxis, lines }} />
                 </Col>
                 <Col sm={4}>
                     <Form >
@@ -88,8 +89,8 @@ class LineEditor extends Component {
             </Row>
             <Row>
                 <Col>
-                    <hr/>
-                    <Code {...{ width, height, margin, data, xAxis, bars }} /></Col>
+                    <hr />
+                    <Code {...{ width, height, margin, data, xAxis, lines }} /></Col>
             </Row>
         </Grid>)
     }

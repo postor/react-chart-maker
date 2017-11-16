@@ -20,17 +20,17 @@ export default (props) => {
 
 }
 
-function getUncontrolled({ width, height, data, margin, xAxis, bars }) {
-    return `import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts'
+function getUncontrolled({ width, height, data, margin, xAxis, lines }) {
+    return `import { LineChart, XAxis, YAxis, Tooltip, Legend, Line } from 'recharts'
     const width = ${width}, 
       height = ${height}, 
       data = ${JSON.stringify(data)}, 
       margin = ${JSON.stringify(margin)}, 
       xAxis = ${JSON.stringify(xAxis)}, 
-      bars = ${JSON.stringify(bars)}
+      lines = ${JSON.stringify(lines)}
 
 
-    export default ({}) => (<BarChart
+    export default ({}) => (<LineChart
         width={width}
         height={height}
         data={data}
@@ -39,13 +39,13 @@ function getUncontrolled({ width, height, data, margin, xAxis, bars }) {
         <YAxis />
         <Tooltip />
         <Legend />
-        {bars.map((x, i) => (<Bar key={i} {...x} />))}
-    </BarChart>)`
+        {lines.map((x, i) => (<Line key={i} {...x} />))}
+    </LineChart>)`
 }
 
 function getControlled(props) {
     return `import { Component } from 'react'
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts'
+import { LineChart, XAxis, YAxis, Tooltip, Legend, Line } from 'recharts'
 
 class MyChart extends Component {
     constructor(props){
@@ -54,8 +54,8 @@ class MyChart extends Component {
     }
 
     render(){
-        const { width, height, data, margin, xAxis, bars } = this.state
-        return (<BarChart
+        const { width, height, data, margin, xAxis, lines } = this.state
+        return (<LineChart
             width={width}
             height={height}
             data={data}
@@ -64,8 +64,8 @@ class MyChart extends Component {
             <YAxis />
             <Tooltip />
             <Legend />
-            {bars.map((x, i) => (<Bar key={i} {...x} />))}
-        </BarChart>)
+            {lines.map((x, i) => (<Line key={i} {...x} />))}
+        </LineChart>)
     }
 }
 
