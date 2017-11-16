@@ -27,6 +27,7 @@
     "next-routes": "^1.0.27",
     "next.js-redux-helper": "^1.0.4",
     "node-restful": "^0.2.6",
+    "randomcolor": "^0.5.3",
     "react": "^15.4.2",
     "react-addons-update": "^15.6.0",
     "react-bootstrap": "^0.31.1",

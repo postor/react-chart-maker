@@ -11,7 +11,6 @@ export default ({ width, height, data, margin, xAxis, lines }) => (<LineChart
     <Tooltip />
     <Legend />
     {lines.map((x, i) => {
-        console.log(x)
         return (<Line key={i} {...x} />)
     })}
 </LineChart>)

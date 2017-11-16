@@ -33,7 +33,7 @@ class BarEditor extends Component {
         return (<Grid>
             <Row>
                 <Col sm={8}>
-                    <Form inline>
+                    <div className="form form-inline">
                         <FormGroup>
                             <ControlLabel>width:</ControlLabel>
                             <FormControl value={width} type="number" placeholder="width" onChange={(e) => this.setState({ width: parseInt(e.target.value) })} />
@@ -43,9 +43,9 @@ class BarEditor extends Component {
                             <ControlLabel>height</ControlLabel>
                             <FormControl value={height} type="number" placeholder="height" onChange={(e) => this.setState({ height: parseInt(e.target.value) })} />
                         </FormGroup>
-                    </Form>
+                    </div>
                     <hr />
-                    <Form inline>
+                    <div className="form form-inline">
                         <FormGroup>
                             <ControlLabel>XAxis:</ControlLabel>
                             <FormControl value={xAxis && xAxis.dataKey} placeholder="XAxis" onChange={(e) => {
@@ -54,10 +54,10 @@ class BarEditor extends Component {
                                 })
                             }} />
                         </FormGroup>
-                    </Form>
+                    </div>
                     <hr />
                     <p>bars:</p>
-                    <Form inline>
+                    <div className="form form-inline">
                         {bars.map((x, i) => (
                             <div key={i}>
                                 <FormGroup>
@@ -90,12 +90,12 @@ class BarEditor extends Component {
                         <a onClick={() => {
                             this.setState({ bars: [...bars, { dataKey: 'name', fill: '#000' }] })
                         }}>增加</a>
-                    </Form>
+                    </div>
                     <hr />
                     <Preview {...{ width, height, margin, data, xAxis, bars }} />
                 </Col>
                 <Col sm={4}>
-                    <Form >
+                    <div className="form" >
                         <FormGroup>
                             <ControlLabel>json:</ControlLabel>
                             <textarea
@@ -119,7 +119,7 @@ class BarEditor extends Component {
                                     }
                                 }} />
                         </FormGroup>
-                    </Form>
+                    </div>
                 </Col>
             </Row>
             <Row>
