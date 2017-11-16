@@ -2,6 +2,8 @@
 
 an editor for making charts in react
 
+online example: http://nextjs.i18ntech.com/charts
+
 ```
 git clone xxx
 cd xxx
