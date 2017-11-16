@@ -4,7 +4,7 @@ export default (props) => {
     const str1 = getUncontrolled(props)
     const str2 = getControlled(props)
     return (<div>
-        <p>Notice: install rechart and randomcolor first <strong>yarn add rechart randomcolor</strong></p>
+        <p>Notice: install rechart and randomcolor first <strong>yarn add recharts randomcolor</strong></p>
         <hr />
         <Form >
             <FormGroup>
